@@ -40,7 +40,7 @@ dim(data)
 
 
 #tidy data
-#According to the article "TidyData", the observations should on the right hand side, and the treatments should form a column. (I consolut my classmate Jiaxin Sun for the following code, line 42-line 52)
+#According to the article "TidyData", the observations should on the right hand side, and the treatments should form a column. (I consult my classmate Jiaxin Sun for the following code, line 42-line 52)
 oil <- 
   data.frame(subset(data, select = -c(gas2000:gas2011))) %>% 
   gather(Year, oil, oil2000:oil2011)%>%
@@ -59,7 +59,6 @@ tidydata$Urban_Influence_2013<-factor(tidydata$Urban_Influence_2013, levels = c(
 tidydata$Metro_Nonmetro_2013<-factor(tidydata$Metro_Nonmetro_2013, levels = c(0,1))
 tidydata$Metro_Micro_Noncore_2013<-factor(tidydata$Metro_Micro_Noncore_2013, levels = c(0,1,2))
 tidydata$Year<-factor(tidydata$Year)
-na.omit(tidydata)
 tidydata$oil<- as.numeric(tidydata$oil, na.omit(tidydata$oil))
 tidydata$gas<- as.numeric(tidydata$gas, na.omit(tidydata$gas))
 
